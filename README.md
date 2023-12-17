@@ -31,7 +31,7 @@ $ evtail
 2024-01-01 00:01:00.0000000 +0000 UTC HOSTNAME.megacorp.local Application 0 0 Information edgeupdate Service stopped.
 ```
 
-Show `System` channel messages from last 30 minutes:
+Show `System` channel messages from last 10 minutes:
 
 ```shell
 evtail -n System -t 10
