@@ -68,8 +68,9 @@ func main() {
 			fmt.Println(evt.Created, evt.ComputerName, evt.Channel, evt.EventId, evt.Opcode, evt.LevelText, evt.ProviderName, SanitizeName(strings.TrimSpace(evt.Msg), max_msg_len))
 		case err := <-watcher.Error():
 			fmt.Printf("Error: %v\n\n", err)
-		default:
-			<-time.After(1 * time.Millisecond)
+		case <-time.After(1 * time.Second):
+			continue
+
 		}
 	}
 }
